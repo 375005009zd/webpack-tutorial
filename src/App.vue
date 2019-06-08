@@ -2,17 +2,17 @@
      <div>
        <el-container>
         <el-header>
-          <router-view></router-view>
+          <TopHeader></TopHeader>
         </el-header>
         <el-header>
-          <router-view name="subheader"></router-view>
+          <SubHeader></SubHeader>
         </el-header>
         <el-container>
           <el-aside width="290px">
-              <router-view name="sidemenu">
-          </router-view></el-aside>
+              <SideMenu></SideMenu>
+          </el-aside>
           <el-main>
-            <router-view name="maincontent"></router-view>
+            <router-view></router-view>
           </el-main>
         </el-container>
       </el-container>
@@ -20,10 +20,19 @@
      </div>
 </template>
 <script>
-    export default {
-        name:'App',
-      
+import TopHeader from '@/components/navbar'
+import SubHeader from '@/components/navbar/subHeader'
+import SideMenu from '@/components/sidemenu'
+
+export default {
+    name: 'homepage',
+    components: {
+      TopHeader,
+      SubHeader,
+      SideMenu
     }
+  
+}
 </script>
 
 

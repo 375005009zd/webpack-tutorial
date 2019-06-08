@@ -1,24 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import NavBar from '@/components/navbar'
-import subHeader from '@/components/navbar/subHeader'
-import SideMenu from '@/components/sidemenu'
-import mainContent from '@/components/maincontent'
 
-Vue.use(VueRouter)
-
-const router= new VueRouter({
-    routes: [
+import Concepts from '@/components/concepts/Concepts'
+import App from '@/App'
+const routes= [
         {
             path: '/',
-            components: {
-                'default': NavBar,
-                'subheader': subHeader,
-                'sidemenu': SideMenu,
-                'maincontent': mainContent
-            }
+            redirect:'/concepts' ,
+            component: App
+        },
+        {
+            path: '/concepts',
+            component: Concepts
         }
     ]
-}) 
 
-export default router;
+export default routes;
